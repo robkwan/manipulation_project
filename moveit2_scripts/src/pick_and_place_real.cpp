@@ -161,7 +161,7 @@ public:
     RCLCPP_INFO(LOGGER, "Approaching...");
     // setup the cartesian target
     RCLCPP_INFO(LOGGER, "Preparing Cartesian Trajectory...");
-    setup_waypoints_target(0.0, 0.0, -0.065);
+    setup_waypoints_target(0.0, 0.0, -0.067);
     // plan and execute the trajectory
     RCLCPP_INFO(LOGGER, "Planning Cartesian Trajectory...");
     plan_trajectory_cartesian();
@@ -175,16 +175,70 @@ public:
     RCLCPP_INFO(LOGGER, "Closing Gripper...");
     // setup the gripper joint value
     RCLCPP_INFO(LOGGER, "Preparing Gripper Value...");
-    setup_joint_value_gripper(+0.680);
+    setup_joint_value_gripper(+0.500);
     // plan and execute the trajectory
     RCLCPP_INFO(LOGGER, "Planning Gripper Action...");
     plan_trajectory_gripper();
     RCLCPP_INFO(LOGGER, "Executing Gripper Action...");
     execute_trajectory_gripper();
     RCLCPP_INFO(LOGGER, "Gripper Closed");
-
     // wait for few seconds
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(250));
+    // setup the gripper joint value
+    RCLCPP_INFO(LOGGER, "Preparing Gripper Value...");
+    setup_joint_value_gripper(+0.550);
+    // plan and execute the trajectory
+    RCLCPP_INFO(LOGGER, "Planning Gripper Action...");
+    plan_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Executing Gripper Action...");
+    execute_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Gripper Closed");
+    // wait for few seconds
+    std::this_thread::sleep_for(std::chrono::milliseconds(250));
+    // setup the gripper joint value
+    RCLCPP_INFO(LOGGER, "Preparing Gripper Value...");
+    setup_joint_value_gripper(+0.575);
+    // plan and execute the trajectory
+    RCLCPP_INFO(LOGGER, "Planning Gripper Action...");
+    plan_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Executing Gripper Action...");
+    execute_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Gripper Closed");
+    // wait for few seconds
+    std::this_thread::sleep_for(std::chrono::milliseconds(250));
+    // setup the gripper joint value
+    RCLCPP_INFO(LOGGER, "Preparing Gripper Value...");
+    setup_joint_value_gripper(+0.600);
+    // plan and execute the trajectory
+    RCLCPP_INFO(LOGGER, "Planning Gripper Action...");
+    plan_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Executing Gripper Action...");
+    execute_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Gripper Closed");
+    // wait for few seconds
+    std::this_thread::sleep_for(std::chrono::milliseconds(250));
+    // setup the gripper joint value
+    RCLCPP_INFO(LOGGER, "Preparing Gripper Value...");
+    setup_joint_value_gripper(+0.625);
+    // plan and execute the trajectory
+    RCLCPP_INFO(LOGGER, "Planning Gripper Action...");
+    plan_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Executing Gripper Action...");
+    execute_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Gripper Closed");
+    // wait for few seconds
+    std::this_thread::sleep_for(std::chrono::milliseconds(250));
+    // setup the gripper joint value
+    RCLCPP_INFO(LOGGER, "Preparing Gripper Value...");
+    setup_joint_value_gripper(+0.645);
+    // plan and execute the trajectory
+    RCLCPP_INFO(LOGGER, "Planning Gripper Action...");
+    plan_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Executing Gripper Action...");
+    execute_trajectory_gripper();
+    RCLCPP_INFO(LOGGER, "Gripper Closed");
+    // wait for few seconds
+    std::this_thread::sleep_for(std::chrono::milliseconds(250));
 
     RCLCPP_INFO(LOGGER, "Retreating...");
     // setup the cartesian target
