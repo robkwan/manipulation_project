@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!-- Robot Xacro Description -->
+<robot name="grasp_object" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Include Xacro Files -->
+
+    <xacro:property name="package" value="ur3e_helper_scripts"/>
+    <xacro:include filename="$(find ${package})/xacro/object_props.xacro"/>
+
+    <!-- Xacro Arguments -->
+
+    <xacro:arg name="mass" default="0.050"/>
+    <xacro:arg name="xsize" default="0.010"/>
+    <xacro:arg name="ysize" default="0.010"/>
+    <xacro:arg name="zsize" default="0.010"/>
+    <xacro:arg name="color" default="grey"/>
+
+    <!-- Link Properties -->
+
+    <link name="grasp_object_link">
+        <xacro:inertial_box mass="$(arg mass)" xsize="$(arg xsize)" ysize="$(arg ysize)" zsize="$(arg zsize)"/>
+        <xacro:collision_box xsize="$(arg xsize)" ysize="$(arg ysize)" zsize="$(arg zsize)"/>
+        <xacro:visual_box xsize="$(arg xsize)" ysize="$(arg ysize)" zsize="$(arg zsize)"/>
+    </link>
+
+    <!-- Gazebo Properties -->
+
+    <gazebo reference="grasp_object_link">
+        <kp>100000.000</kp>
+        <kd>100.000</kd>
+        <mu1>1.000</mu1>
+        <mu2>1.000</mu2>
+        <xacro:gazebo_material color="$(arg color)"/>
+    </gazebo>
+
+</robot>
+
+<!-- End of Code -->

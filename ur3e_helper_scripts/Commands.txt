@@ -1,0 +1,60 @@
+Terminal Commands: [for quick copy-pasting]
+------------------
+
+# ~~~~~ General ~~~~~ #
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+
+cd ~/ros2_ws && source install/setup.bash
+colcon build && source install/setup.bash
+cd ~/ros2_ws && colcon build && source install/setup.bash
+cd ~/ros2_ws && rm -rf ./build ./install ./log && colcon build && source install/setup.bash
+# ~~~~~~~~~~~~~~~~~~~ #
+
+# ~~~~~ Simulation ~~~~~ #
+ros2 launch sim_ur3e_config move_group.launch.py
+ros2 launch sim_ur3e_config moveit_rviz.launch.py
+
+ros2 launch ur3e_helper_scripts spawn_objects.launch.py
+ros2 launch ur3e_helper_scripts spawn_grasp_object.launch.py mass:=0.050 xsize:=0.0150 ysize:=0.0250 zsize:=0.0750 color:=random x:=5.2800 y:=-3.8400 z:=0.9550 R:=0.0000 P:=0.0000 Y:=0.0000
+
+ros2 launch ur3e_helper_scripts display_current_pose.launch.py use_sim_time:=True
+ros2 launch ur3e_helper_scripts reset_grasp_object.launch.py use_sim_time:=True x:=0.150 y:=0.250 z:=0.200
+
+ros2 launch ur3e_helper_scripts move_to_blocks.launch.py use_sim_time:=True
+ros2 launch ur3e_helper_scripts move_to_coords.launch.py use_sim_time:=True x:=0.250 y:=0.250 z:=0.250 steps:=once
+ros2 launch ur3e_helper_scripts move_to_coords.launch.py use_sim_time:=True x:=0.250 y:=0.250 z:=0.250 steps:=zyx
+
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_sim_time:=True use_block:=True standing:=True slim_grip:=True
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_sim_time:=True use_block:=True standing:=True wide_grip:=True
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_sim_time:=True use_block:=True lying:=True slim_grip:=True
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_sim_time:=True use_block:=True lying:=True wide_grip:=True
+# ~~~~~~~~~~~~~~~~~~~~~~ #
+
+# ~~~~~ Real Robot ~~~~~ #
+ros2 launch real_ur3e_config move_group.launch.py
+ros2 launch real_ur3e_config moveit_rviz.launch.py
+
+ros2 launch ur3e_helper_scripts display_current_pose.launch.py
+ros2 launch ur3e_helper_scripts reset_grasp_object.launch.py x:=0.150 y:=0.250 z:=0.200
+
+ros2 launch ur3e_helper_scripts move_to_blocks.launch.py
+ros2 launch ur3e_helper_scripts move_to_coords.launch.py x:=0.250 y:=0.250 z:=0.250 steps:=once
+ros2 launch ur3e_helper_scripts move_to_coords.launch.py x:=0.250 y:=0.250 z:=0.250 steps:=zyx
+
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_block:=True standing:=True slim_grip:=True
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_block:=True standing:=True wide_grip:=True
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_block:=True lying:=True slim_grip:=True
+ros2 launch ur3e_helper_scripts setup_grasp_object.launch.py use_block:=True lying:=True wide_grip:=True
+# ~~~~~~~~~~~~~~~~~~~~~~ #
+
+# ~~~~~ Extras ~~~~~ #
+ros2 action send_goal /gripper_controller/gripper_cmd control_msgs/action/GripperCommand "command: {position: 0.0, max_effort: 0.0}"
+ros2 action send_goal /robotiq_gripper_controller/gripper_cmd control_msgs/action/GripperCommand "command: {position: 0.0, max_effort: 0.0}"
+
+ros2 topic echo /joint_states --once
+ros2 topic echo /gripper/joint_states --once
+
+ros2 run tf2_ros tf2_echo base_link tool0
+# ~~~~~~~~~~~~~~~~~~ #

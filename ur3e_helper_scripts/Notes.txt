@@ -1,0 +1,107 @@
+Notes and Observations:
+-----------------------
+
+GUI Camera Pose:
+x: +3.750, y: -5.000, z: +1.250
+R: +0.000, P: +0.000, Y: +0.500
+
+Sim & Real UR3e Pose:
+x: +5.300, y: -3.500, z: +0.920
+R: +0.000, P: +0.000, Y: -1.570
+
+Sim Object Pose:
+Target Pose: x: +0.340, y: -0.020
+x: +5.280, y: -3.840, z: +0.950
+R: +0.000, P: +0.000, Y: +0.000
+
+Real Object Pose:
+Target Pose: x: +0.343, y: +0.132
+x: +5.168, y: -3.843, z: +0.950
+R: +0.000, P: +0.000, Y: +0.000
+
+Target Pose: [with respect to UR3e/world]
+Right = +x ; Left = -x
+Front = +y ; Back = -y
+Raise = +z ; Drop = -z
+
+Simulation Gripper Values: [values may vary slightly]
+0.005 m : 0.7600 rad : 43.54 degs
+0.010 m : 0.7200 rad : 41.25 degs
+0.015 m : 0.6750 rad : 38.67 degs
+0.020 m : 0.6275 rad : 35.95 degs
+0.025 m : 0.5875 rad : 33.66 degs
+0.030 m : 0.5475 rad : 31.37 degs
+0.035 m : 0.5025 rad : 28.79 degs
+0.040 m : 0.4575 rad : 26.21 degs
+0.045 m : 0.4125 rad : 23.63 degs
+0.050 m : 0.3700 rad : 21.20 degs
+0.055 m : 0.3175 rad : 18.19 degs
+0.060 m : 0.2700 rad : 15.47 degs
+0.065 m : 0.2150 rad : 12.32 degs
+0.070 m : 0.1675 rad : 09.60 degs
+0.075 m : 0.1150 rad : 06.59 degs
+0.080 m : 0.0600 rad : 03.44 degs
+
+Real Robot Gripper Values: [values may vary slightly]
+0.015 m : 0.6590 rad : 37.76 degs
+0.025 m : 0.5780 rad : 33.12 degs
+0.030 m : 0.5357 rad : 30.69 degs
+0.040 m : 0.4476 rad : 25.65 degs
+0.045 m : 0.4088 rad : 23.42 degs
+0.050 m : 0.3700 rad : 21.20 degs
+0.055 m : 0.3207 rad : 18.37 degs
+0.060 m : 0.2819 rad : 16.15 degs
+0.065 m : 0.2326 rad : 13.33 degs
+0.070 m : 0.1938 rad : 11.10 degs
+0.075 m : 0.1480 rad : 08.48 degs
+0.080 m : 0.1022 rad : 05.86 degs
+
+Simulation Gripper Value Measurement with Arbitrary Scale:
+|---------------|--------------|-----------------|--------------|
+| Gripper Value | Actual Value | Arbitrary Scale | Actual Scale |
+|---------------|--------------|-----------------|--------------|
+|   0.8000 rad  |  0.8000 rad  |       5 px      |   0.0006 m   |
+|   0.7500 rad  |  0.7500 rad  |      49 px      |   0.0060 m   |
+|   0.7000 rad  |  0.7000 rad  |      97 px      |   0.0119 m   |
+|   0.6500 rad  |  0.6500 rad  |     145 px      |   0.0177 m   |
+|   0.6000 rad  |  0.6000 rad  |     190 px      |   0.0232 m   |
+|   0.5500 rad  |  0.5500 rad  |     235 px      |   0.0287 m   |
+|   0.5000 rad  |  0.5000 rad  |     283 px      |   0.0346 m   |
+|   0.4500 rad  |  0.4500 rad  |     328 px      |   0.0401 m   |
+|   0.4000 rad  |  0.4000 rad  |     371 px      |   0.0454 m   |
+|   0.3500 rad  |  0.3500 rad  |     415 px      |   0.0508 m   |
+|   0.3000 rad  |  0.3000 rad  |     459 px      |   0.0561 m   |
+|   0.2500 rad  |  0.2500 rad  |     501 px      |   0.0613 m   |
+|   0.2000 rad  |  0.2000 rad  |     541 px      |   0.0662 m   |
+|   0.1500 rad  |  0.1500 rad  |     581 px      |   0.0711 m   |
+|   0.1000 rad  |  0.1000 rad  |     621 px      |   0.0759 m   |
+|   0.0500 rad  |  0.0500 rad  |     659 px      |   0.0806 m   |
+|   0.0000 rad  |  0.0000 rad  |     695 px      |   0.0850 m   |
+|---------------|--------------|-----------------|--------------|
+Arbitrary to Actual Reference: 695 px = 0.0850 meters
+
+Real Robot Gripper Value Measurement with Arbitrary Scale:
+|---------------|--------------|-----------------|--------------|
+| Gripper Value | Actual Value | Arbitrary Scale | Actual Scale |
+|---------------|--------------|-----------------|--------------|
+|   0.8000 rad  |  0.7930 rad  |       0 px      |   0.0000 m   |
+|   0.7500 rad  |  0.7471 rad  |       4 px      |   0.0023 m   |
+|   0.7000 rad  |  0.6978 rad  |      12 px      |   0.0068 m   |
+|   0.6500 rad  |  0.6485 rad  |      22 px      |   0.0126 m   |
+|   0.6000 rad  |  0.5991 rad  |      32 px      |   0.0183 m   |
+|   0.5500 rad  |  0.5498 rad  |      42 px      |   0.0240 m   |
+|   0.5000 rad  |  0.4969 rad  |      52 px      |   0.0297 m   |
+|   0.4500 rad  |  0.4476 rad  |      62 px      |   0.0354 m   |
+|   0.4000 rad  |  0.3982 rad  |      73 px      |   0.0416 m   |
+|   0.3500 rad  |  0.3489 rad  |      83 px      |   0.0473 m   |
+|   0.3000 rad  |  0.2996 rad  |      93 px      |   0.0531 m   |
+|   0.2500 rad  |  0.2467 rad  |     103 px      |   0.0588 m   |
+|   0.2000 rad  |  0.1974 rad  |     113 px      |   0.0645 m   |
+|   0.1500 rad  |  0.1480 rad  |     122 px      |   0.0696 m   |
+|   0.1000 rad  |  0.0987 rad  |     131 px      |   0.0747 m   |
+|   0.0500 rad  |  0.0493 rad  |     140 px      |   0.0799 m   |
+|   0.0000 rad  |  0.0000 rad  |     149 px      |   0.0850 m   |
+|---------------|--------------|-----------------|--------------|
+Arbitrary to Actual Reference: 149 px = 0.0850 meters
+
+-----------------------

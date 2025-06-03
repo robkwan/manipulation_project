@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+<!-- Xacro Description -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Gazebo Materials -->
+
+    <xacro:macro name="gazebo_material" params="color">
+        <xacro:if value="${color == 'grey'}">
+            <material>Gazebo/Grey</material>
+        </xacro:if>
+        <xacro:if value="${color == 'darkgrey'}">
+            <material>Gazebo/DarkGrey</material>
+        </xacro:if>
+        <xacro:if value="${color == 'white'}">
+            <material>Gazebo/White</material>
+        </xacro:if>
+        <xacro:if value="${color == 'flatblack'}">
+            <material>Gazebo/FlatBlack</material>
+        </xacro:if>
+        <xacro:if value="${color == 'black'}">
+            <material>Gazebo/Black</material>
+        </xacro:if>
+        <xacro:if value="${color == 'red'}">
+            <material>Gazebo/Red</material>
+        </xacro:if>
+        <xacro:if value="${color == 'redbright'}">
+            <material>Gazebo/RedBright</material>
+        </xacro:if>
+        <xacro:if value="${color == 'green'}">
+            <material>Gazebo/Green</material>
+        </xacro:if>
+        <xacro:if value="${color == 'blue'}">
+            <material>Gazebo/Blue</material>
+        </xacro:if>
+        <xacro:if value="${color == 'skyblue'}">
+            <material>Gazebo/SkyBlue</material>
+        </xacro:if>
+        <xacro:if value="${color == 'yellow'}">
+            <material>Gazebo/Yellow</material>
+        </xacro:if>
+        <xacro:if value="${color == 'zincyellow'}">
+            <material>Gazebo/ZincYellow</material>
+        </xacro:if>
+        <xacro:if value="${color == 'darkyellow'}">
+            <material>Gazebo/DarkYellow</material>
+        </xacro:if>
+        <xacro:if value="${color == 'purple'}">
+            <material>Gazebo/Purple</material>
+        </xacro:if>
+        <xacro:if value="${color == 'turquoise'}">
+            <material>Gazebo/Turquoise</material>
+        </xacro:if>
+        <xacro:if value="${color == 'orange'}">
+            <material>Gazebo/Orange</material>
+        </xacro:if>
+        <xacro:if value="${color == 'indigo'}">
+            <material>Gazebo/Indigo</material>
+        </xacro:if>
+    </xacro:macro>
+
+    <!-- Inertials -->
+
+    <xacro:macro name="inertial_box" params="mass xsize ysize zsize">
+        <inertial>
+            <origin xyz="0.000 0.000 0.000" rpy="0.000 0.000 0.000"/>
+            <mass value="${mass}"/>
+            <inertia ixx="${(1 / 12) * mass * ((ysize * ysize) + (zsize * zsize))}" ixy="0.000" ixz="0.000"
+                     iyy="${(1 / 12) * mass * ((xsize * xsize) + (zsize * zsize))}" iyz="0.000"
+                     izz="${(1 / 12) * mass * ((xsize * xsize) + (ysize * ysize))}"/>
+        </inertial>
+    </xacro:macro>
+
+    <!-- Collisions -->
+
+    <xacro:macro name="collision_box" params="xsize ysize zsize">
+        <collision>
+            <geometry>
+                <box size="${xsize} ${ysize} ${zsize}"/>
+            </geometry>
+        </collision>
+    </xacro:macro>
+
+    <xacro:macro name="collision_mesh" params="meshfile xscale yscale zscale">
+        <collision>
+            <geometry>
+                <mesh filename="${meshfile}" scale="${xscale} ${yscale} ${zscale}"/>
+            </geometry>
+        </collision>
+    </xacro:macro>
+
+    <!-- Visuals -->
+
+    <xacro:macro name="visual_box" params="xsize ysize zsize">
+        <visual>
+            <geometry>
+                <box size="${xsize} ${ysize} ${zsize}"/>
+            </geometry>
+            <!-- <material name="${material}"/> -->
+        </visual>
+    </xacro:macro>
+
+    <xacro:macro name="visual_mesh" params="meshfile xscale yscale zscale">
+        <visual>
+            <geometry>
+                <mesh filename="${meshfile}" scale="${xscale} ${yscale} ${zscale}"/>
+            </geometry>
+        </visual>
+    </xacro:macro>
+
+</robot>
+
+<!-- End of Code -->
